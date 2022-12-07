@@ -1,14 +1,10 @@
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
-
-const cookieParser = require('cookie-parser');
 const moviesRouter = require('./movies');
 const usersRouter = require('./users');
 const { createUser, login } = require('../controllers/users');
 const auth = require('../middlewares/auth');
 const NotFoundError = require('../errors/NotFoundError');
-
-router.use(cookieParser());
 
 router.post('/signup', celebrate({
   body: Joi.object().keys({
@@ -23,9 +19,11 @@ router.post('/signin', celebrate({
     password: Joi.string().required(),
   }),
 }), login);
+
 router.use(auth);
-router.use(usersRouter);
+
 router.use(moviesRouter);
+router.use(usersRouter);
 router.get('/signout', (req, res) => {
   res.clearCookie('jwt').send({ message: 'Выход' });
 });

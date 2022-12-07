@@ -22,6 +22,7 @@ const app = express();
 const { cors } = require('./middlewares/corsHandler');
 
 app.use(cors);
+
 app.use(cookieParser());
 app.use(helmet());
 app.use(bodyParser.json());

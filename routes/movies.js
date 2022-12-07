@@ -20,11 +20,11 @@ moviesRouter.post('/movies', celebrate({
     year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().pattern(URL_PATTERN),
-    trailer: Joi.string().required().pattern(URL_PATTERN),
+    trailerLink: Joi.string().required().pattern(URL_PATTERN),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
     thumbnail: Joi.string().required().pattern(URL_PATTERN),
-    movieId: Joi.string().hex().required(),
+    // movieId: Joi.string().hex().required(),
   }),
 }), createMovie);
 
