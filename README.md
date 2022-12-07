@@ -1,3 +1,4 @@
 # Дипломный проект!
 
-Backend https://next-one-for-study.nomoredomains.icu/
+Backend искать тут: https://next-one-for-study.nomoredomains.icu/
+Публичный IPv4: 51.250.101.24
