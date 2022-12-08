@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://one-for-study.nomoredomains.icu',
-  'http://one-for-study.nomoredomains.icu',
+  'https://movies-for-study.nomoredomains.club',
+  'http://movies-for-study.nomoredomains.club',
   'http://localhost:3001',
   'http://localhost:3000',
 ];

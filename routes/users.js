@@ -2,24 +2,16 @@ const usersRouter = require('express').Router();
 
 const { celebrate, Joi } = require('celebrate');
 
-/* const {
-  URL_PATTERN,
-} = require('../utils/utils'); */
-
 const {
   getUser, editUserProfile,
 } = require('../controllers/users');
 
-usersRouter.get('/users/me', celebrate({
-  body: Joi.object().keys({
-    userId: Joi.string().length(24).hex().required(),
-  }),
-}), getUser);
+usersRouter.get('/users/me', getUser);
 
 usersRouter.patch('/users/me', celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
-    email: Joi.string().email(),
+    name: Joi.string().required().min(2).max(30),
+    email: Joi.string().required().email(),
   }),
 }), editUserProfile);
 

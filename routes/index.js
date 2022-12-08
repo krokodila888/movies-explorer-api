@@ -5,6 +5,9 @@ const usersRouter = require('./users');
 const { createUser, login } = require('../controllers/users');
 const auth = require('../middlewares/auth');
 const NotFoundError = require('../errors/NotFoundError');
+const {
+  ERROR_MESSAGE, MESSAGE,
+} = require('../utils/utils');
 
 router.post('/signup', celebrate({
   body: Joi.object().keys({
@@ -25,11 +28,11 @@ router.use(auth);
 router.use(moviesRouter);
 router.use(usersRouter);
 router.get('/signout', (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Выход' });
+  res.clearCookie('jwt').send({ message: MESSAGE.EXIT });
 });
 
 router.use('*', () => {
-  throw new NotFoundError('Вы сделали что-то не то. Вернитесь назад.');
+  throw new NotFoundError(ERROR_MESSAGE.RETURN_BACK);
 });
 
 module.exports = router;

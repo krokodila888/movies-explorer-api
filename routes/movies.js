@@ -24,13 +24,13 @@ moviesRouter.post('/movies', celebrate({
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
     thumbnail: Joi.string().required().pattern(URL_PATTERN),
-    // movieId: Joi.string().hex().required(),
+    movieId: Joi.string().required(),
   }),
 }), createMovie);
 
 moviesRouter.delete('/movies/:movieId', celebrate({
   params: Joi.object().keys({
-    movieId: Joi.string()./* length(24). */hex().required(),
+    movieId: Joi.string().length(24).hex().required(),
   }),
 }), deleteMovie);
 
