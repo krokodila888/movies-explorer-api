@@ -29,12 +29,12 @@ module.exports.deleteMovie = (req, res, next) => {
   Movie.findById(req.params.movieId)
     .then((movie) => {
       if (!movie) {
-        next(new NotFoundError(ERROR_MESSAGE.MOVIE_DELETE_NO_ID));
+        throw new NotFoundError(ERROR_MESSAGE.MOVIE_DELETE_NO_ID);
       }
       if (movie.owner.toString() !== req.user._id) {
-        next(new WrongMovieError(ERROR_MESSAGE.NOT_OWNER));
+        throw new WrongMovieError(ERROR_MESSAGE.NOT_OWNER);
       }
-      Movie.findByIdAndRemove(req.params.movieId)
+      return Movie.findByIdAndRemove(req.params.movieId)
         .then(() => res.send({ data: movie }))
         .catch((err) => next(err));
     })
@@ -46,3 +46,4 @@ module.exports.deleteMovie = (req, res, next) => {
       }
     });
 };
+
