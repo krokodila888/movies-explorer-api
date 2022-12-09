@@ -53,7 +53,7 @@ module.exports.getUser = (req, res, next) => {
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        next(new RequestError(ERROR_MESSAGE.USER_GET_ID));
+        next(new RequestError(ERROR_MESSAGE.CAST_ERROR_MESSAGE));
       } else {
         next(err);
       }
