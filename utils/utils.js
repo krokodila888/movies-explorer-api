@@ -26,6 +26,7 @@ const ERROR_MESSAGE = {
   WRONG_EMAIL_OR_PASS: 'Неправильный формат почты или пароля',
   NO_SUCH_USER: 'Данный пользователь не зарегистрирован',
   RETURN_BACK: 'Вы сделали что-то не то. Вернитесь назад.',
+  CAST_ERROR_MESSAGE: 'Передан невалидный _id пользователя',
 };
 
 const MESSAGE = {
