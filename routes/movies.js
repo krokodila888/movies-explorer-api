@@ -24,7 +24,7 @@ moviesRouter.post('/movies', celebrate({
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
     thumbnail: Joi.string().required().pattern(URL_PATTERN),
-    movieId: Joi.string().required(),
+    movieId: Joi.number().required(),
   }),
 }), createMovie);
 
