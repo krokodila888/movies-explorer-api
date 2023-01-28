@@ -13,6 +13,6 @@
 Стек:
 * JavaScript, React, React-Router 🦾 
 
-**Репозиторий с фронтендом: https://github.com/krokodila888/movies-explorer-frontend/blob/level-2/README.md**
+**Репозиторий с фронтендом: https://github.com/krokodila888/movies-explorer-frontend/**
 **Деплой бэкенда: https://api.movies-for-study.online/** 
 **Деплой проекта: https://movies-for-study.online/**
