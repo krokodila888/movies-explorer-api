@@ -14,5 +14,5 @@
 * JavaScript, React, React-Router 🦾 
 
 **Репозиторий с фронтендом: https://github.com/krokodila888/movies-explorer-frontend/**
-**Деплой бэкенда: https://api.movies-for-study.online/** 
-**Деплой проекта: https://movies-for-study.online/**
+**Деплой бэкенда: https://api.movies-for-study.fun/** 
+**Деплой проекта: https://movies-for-study.fun/**
